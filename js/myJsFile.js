@@ -25,29 +25,34 @@ window.onscroll = () => {
 */
 
 var x = document.getElementById("mytestNavBar");  
+x.style.display="none";
+
+var __Xpos = "left";
+
 var menuIcon = document.getElementById("menu-icon");
 var menuChild = x.children;
-let text = "";
-for (let i = 0; i < menuChild.length; i++) {
-  text += menuChild[i].children.tagName + "<br>";
-}
-
-var myNumber = 1;
 
 menuIcon.onclick=function(){      
     myFunction();    
 }
-
-function myFunction() {  
-   if(myNumber === 1){
-     x.style.display = "none";
-       console.log("this  =  "+this);
-       menuIcon.style.backgroundPosition = 'right';
-        myNumber=0; 
-   }else{
-       x.style.display = "block"; 
-       menuIcon.style.backgroundPosition = 'left';
-        myNumber=1;        
-   }
+x.onclick=function(){
+    navBtnNormalize();
 }
 
+function myFunction() {  
+   if(__Xpos === 'left'){
+     x.style.display = "block";
+       menuIcon.style.backgroundPosition = 'right';
+       __Xpos="right";          
+   }else{
+       x.style.display = "none"; 
+       menuIcon.style.backgroundPosition = 'left'; 
+       __Xpos = "left";          
+   }
+}
+function navBtnNormalize(){
+    __Xpos = "left";
+    menuIcon.style.backgroundPosition = 'left';
+    x.style.display = "none";
+    console.log("__Xpos :: "+__Xpos);
+}
