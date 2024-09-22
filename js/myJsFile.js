@@ -52,8 +52,7 @@ function myFunction() {
    }
 }
 function navBtnNormalize(){
+    menuIcon.style.backgroundPosition = 'right';     
+    x.style.display = "block";  
     __Xpos = "right";
-    menuIcon.style.backgroundPosition = 'right';
-    x.style.display = "none";
-    console.log("__Xpos :: "+__Xpos);
 }
