@@ -84,6 +84,7 @@ header{
     width: 35px;
     height: 35px;
     background-image: url("../images/navBtnImg.png");
+    background-position: right;
 }
 /*------------[ Home Section ]--------------------*/
 section{
