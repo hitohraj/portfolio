@@ -52,8 +52,8 @@ function myFunction() {
    }
 }
 function navBtnNormalize(){
-    __Xpos = "left";
-    menuIcon.style.backgroundPosition = 'left';
+    __Xpos = "right";
+    menuIcon.style.backgroundPosition = 'right';
     x.style.display = "none";
     console.log("__Xpos :: "+__Xpos);
 }
