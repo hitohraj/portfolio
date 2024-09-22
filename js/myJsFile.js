@@ -27,7 +27,7 @@ window.onscroll = () => {
 var x = document.getElementById("mytestNavBar");  
 x.style.display="none";
 
-var __Xpos = "left";
+var __Xpos = "right";
 
 var menuIcon = document.getElementById("menu-icon");
 menuIcon.style.backgroundPosition = 'right';
@@ -41,14 +41,14 @@ x.onclick=function(){
 }
 
 function myFunction() {  
-   if(__Xpos === 'left'){
+   if(__Xpos === 'right'){
      x.style.display = "block";
-       menuIcon.style.backgroundPosition = 'right';
-       __Xpos="right";          
+       menuIcon.style.backgroundPosition = 'left';
+       __Xpos="left";          
    }else{
        x.style.display = "none"; 
-       menuIcon.style.backgroundPosition = 'left'; 
-       __Xpos = "left";          
+       menuIcon.style.backgroundPosition = 'right'; 
+       __Xpos = "right";          
    }
 }
 function navBtnNormalize(){
