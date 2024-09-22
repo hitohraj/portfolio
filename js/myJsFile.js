@@ -30,7 +30,7 @@ x.style.display="none";
 var __Xpos = "left";
 
 var menuIcon = document.getElementById("menu-icon");
-menuIcon.style.backgroundPosition = 'left';
+menuIcon.style.backgroundPosition = 'right';
 var menuChild = x.children;
 
 menuIcon.onclick=function(){      
