@@ -34,7 +34,7 @@ header{
     display: flex;
     align-items: center;
 }
-.navbar a{
+.navbar a{   
     color: #fff;
     font-size: 18px;
     font-weight: 400;
@@ -53,6 +53,7 @@ header{
     align-items: center;
 }
 .nav-btn i{
+    display: none;
     font-size: 22px;
     margin-right: 5px;
 }
@@ -83,12 +84,12 @@ header{
 #menu-icon{
     width: 35px;
     height: 35px;
-    background-image: url("../images/navBtnImg.png");
-    background-position: right;
+    background-image: url("../images/navBtnImg.png");  
 }
 /*------------[ Home Section ]--------------------*/
 section{
     padding: 120px 12% 60px;
+    display: 
 }
 .home{
     position: relative;
@@ -730,25 +731,27 @@ textarea:focus, textarea:valid{
         position: absolute;
         top: 100%;
         right: 0;
-        left: 0;        
+        left: -100%;        
         width: 100%;
         height: 100vh;    
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        padding: 10px 20px;   
-        -webkit-backdrop-filter: blur(40px);
-        backdrop-filter: blur(40px);
+        padding: 10px 20px;           
+        background-color: #3c1d5a;
         transition: all .42s;
+        z-index: 10001;
     }
-    .navbar a{  
-        display: block;
+    .navbar a{       
         font-size: 20px;
         margin: 5px;
     }
     .navbar.open{  
         100%;
     }
+    .navbar li{
+        margin: 10px;
+    }   
 }
 @media(max-width:700px){
     form .cont-input input{
@@ -770,5 +773,9 @@ textarea:focus, textarea:valid{
     .nav-btn{
         padding: 12px 20px;
     }
-
+}
+@media(max-width:360px){
+    #project{
+        padding: 120px 1% 60px;
+    }
 }

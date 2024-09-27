@@ -10,49 +10,40 @@ window.addEventListener("scroll",function(){
     header.classList.toggle("sticky",this.window.scrollY > 0)
 });
 
-/*
 
-let menu = document.querySelector("#menu-icon");
-let navbar = document.querySelector(".navbar");
+var __nevbar = document.getElementById("myNavBarId");  
+var __menuIcon = document.getElementById("menu-icon");
+var __nevbarBtn = document.getElementById('myNavBarId').getElementsByTagName('a');
+ var __menuDefaultPos = true;
 
-menu.addEventListener("click", function () {
-    navbar.classList.toggle("active");
-});
-
-window.onscroll = () => {
-    navbar.classList.remove("active");
-};
-*/
-
-var x = document.getElementById("mytestNavBar");  
-x.style.display="none";
-
-var __Xpos = "right";
-
-var menuIcon = document.getElementById("menu-icon");
-menuIcon.style.backgroundPosition = 'right';
-var menuChild = x.children;
-
-menuIcon.onclick=function(){      
-    myFunction();    
-}
-x.onclick=function(){
-    navBtnNormalize();
+function __toggleMenuContent(){   
+   // console.log('__menuDefaultPos  ==  '+__menuDefaultPos); 
+    if(__menuDefaultPos === true){
+        __menuIcon.style.backgroundPosition = 'right';
+        __nevbar.style.left = '0';
+        __menuDefaultPos=false;
+        //console.log('__menuDefaultPos  ==  '+__menuDefaultPos); 
+    }else{
+            if(__menuDefaultPos === false){
+            __nevbar.style.left = '-100%'; 
+            __menuIcon.style.backgroundPosition = 'left';
+        } 
+         __menuDefaultPos=true;       
+    }    
 }
 
-function myFunction() {  
-   if(__Xpos === 'right'){
-     x.style.display = "block";
-       menuIcon.style.backgroundPosition = 'left';
-       __Xpos="left";          
-   }else{
-       x.style.display = "none"; 
-       menuIcon.style.backgroundPosition = 'right'; 
-       __Xpos = "right";          
-   }
+function __nevbarListToggle(){
+    for(let i=0; i<__nevbarBtn.length; i++){
+        var __llistBtn = __nevbarBtn[i];
+       __llistBtn.onclick = function(){
+           __nevbar.style.left = '-100%'; 
+           __menuIcon.style.backgroundPosition = 'left';   
+           __menuDefaultPos=true;          
+        }        
+    }
+       
 }
-function navBtnNormalize(){
-    menuIcon.style.backgroundPosition = 'right';     
-    x.style.display = "none";  
-    __Xpos = "right";
+ __nevbarListToggle();
+ __menuIcon.onclick = function(){       
+    __toggleMenuContent();
 }
