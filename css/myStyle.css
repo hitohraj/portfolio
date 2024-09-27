@@ -737,8 +737,8 @@ textarea:focus, textarea:valid{
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        padding: 10px 20px;           
-        background-color: #3c1d5a;
+        padding: 10px 20px;     
+        background-image: linear-gradient(to bottom right, #3c1d5a, #300f50);
         transition: all .42s;
         z-index: 10001;
     }
